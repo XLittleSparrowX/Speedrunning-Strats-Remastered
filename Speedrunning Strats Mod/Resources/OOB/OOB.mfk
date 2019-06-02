@@ -1,8 +1,9 @@
 SelectMission("m6");
 
-SetMissionResetPlayerInCar("m6_snake_carstart");
+SetMissionResetPlayerInCar("m6_kwikeSpawn");
 SetDynaLoadData("l7z3.p3d;l7r2.p3d;l7r3.p3d;");
-InitLevelPlayerVehicle("snake_v","m6_snake_carstart","OTHER");
+
+InitLevelPlayerVehicle("snake_v","m6_kwikeSpawn","OTHER");
 SetNumValidFailureHints( 5 );
 UsePedGroup(3);
 

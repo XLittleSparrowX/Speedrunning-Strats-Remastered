@@ -1,8 +1,8 @@
 SelectMission("m4");
 
-SetMissionResetPlayerInCar("m4_carstart");
+SetMissionResetPlayerInCar("m4_carstart2");
 SetDynaLoadData("l3z2.p3d;l3r1.p3d;l3z1.p3d;");
-InitLevelPlayerVehicle("schoolbu","m4_carstart","OTHER");
+InitLevelPlayerVehicle("otto_v","m4_carstart","OTHER");
 
 SetNumValidFailureHints( 5 );
 
