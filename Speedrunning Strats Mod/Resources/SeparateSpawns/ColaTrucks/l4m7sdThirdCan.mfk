@@ -1,0 +1,38 @@
+SelectMission("m7sd");
+
+SetMissionResetPlayerOutCar("m7_marge3","m7_carstart");
+SetDynaLoadData("l4r4a.p3d;l4z6.p3d;l4r6.p3d;");
+
+UsePedGroup(1);
+
+
+AddStage();
+	SetStageMessageIndex(102);
+	AddObjective("timer");
+		SetDurationTime(3);
+	CloseObjective();
+CloseStage();
+
+//AddStage(1);
+//	SetStageMessageIndex(102);
+//	AddObjective("goto");
+//		SetDestination("m7_marge1","triggersphere");
+//		MustActionTrigger();
+//		SetCollectibleEffect("wrench_collect");
+//	CloseObjective();
+//CloseStage();
+
+
+CloseMission();
+
+
+//dialogue_hands_in_air
+//dialogue_hands_on_hips
+//dialogue_scratch_head
+//dialogue_shaking_fist
+//dialogue_thinking
+//dialogue_yes
+//dialogue_no
+//dialogue_cross_arms
+//dialogue_open_arm_hand_gesture
+//dialogue_shake_hand_in_air

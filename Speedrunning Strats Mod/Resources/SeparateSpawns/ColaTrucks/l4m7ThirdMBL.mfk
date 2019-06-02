@@ -1,0 +1,77 @@
+SelectMission("m7");
+
+SetMissionResetPlayerInCar("m7_carstart3");
+SetDynaLoadData("l4r4a.p3d;l4z6.p3d;l4r6.p3d;");
+
+InitLevelPlayerVehicle("smith_v","m7_carstart3","OTHER");
+
+UsePedGroup(1);
+
+SetForcedCar();
+
+AddStage(37);
+	SetStageMessageIndex(235);
+	SetHUDIcon( "pwrplant" );
+	AddObjective("goto");
+		AddStageVehicle("cCola","m7_cola3_carstart","NULL","Missions\level04\M7dest.con","male2");
+		SetDestination("m7_cola3_trigger", "carsphere");
+		SetCollectibleEffect("wrench_collect");
+	CloseObjective();
+CloseStage();
+
+AddStage(36);
+	ShowStageComplete();
+	SetStageMessageIndex(38);
+	SetHUDIcon( "cola_v" );
+	AddStageWaypoint( "m7_cola3_path4" );
+	AddStageWaypoint( "m7_cola1_path1" );
+	AddObjective("destroy");
+		ActivateVehicle("cCola","NULL","target");
+		SetVehicleAIParams( "cCola", -10, -9 );   // no shortcuts
+		SetObjTargetVehicle("cCola");
+	CloseObjective();
+	SetStageTime(120);
+	AddCondition("timeout");
+		//SetHitNRun();
+	CloseCondition();
+	SetMusicState("Mission7", "Stage2");
+CloseStage();
+
+AddStage(0);
+	SetStageMessageIndex(217);
+	SetHUDIcon( "simpsons" );
+	AddObjective( "goto" );
+		TurnGotoDialogOff();
+//		AddStageVehicle("wiggu_v","m7_wiggum_carstart1","NULL","Missions\level04\M7evade.con");
+		AddStageVehicle("cPolice","m7_wiggum_carstart1","NULL","Missions\level04\M7evade.con","wiggum");
+		SetDestination( "m7_wiggum_pursue", "carsphere");
+		SetCollectibleEffect("wrench_collect");
+	CloseObjective();
+	SetCompletionDialog("settled","wiggum");
+CloseStage();
+
+AddStage(0);
+	SetStageMessageIndex(40);
+	SetHUDIcon( "wiggu_v" );
+	ActivateVehicle("cPolice","NULL","chase");
+	AddObjective("losetail");
+		SetObjTargetVehicle("cPolice");
+		SetObjDistance(150);
+	CloseObjective();
+	SetStageTime(60);
+	AddCondition("timeout");
+		//SetHitNRun();
+	CloseCondition();
+	ShowStageComplete();
+CloseStage();	
+
+AddStage(0,"final");
+	SetStageMessageIndex(217);
+	SetHUDIcon( "simpsons" );
+	AddObjective("goto");
+		SetDestination("m7_home_locator", "carsphere");
+		SetCollectibleEffect("wrench_collect");
+	CloseObjective();
+CloseStage();
+
+CloseMission();
