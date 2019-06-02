@@ -1,7 +1,7 @@
 SelectMission("m4");
 
 SetMissionResetPlayerInCar("m4_carstart2");
-SetDynaLoadData("l3z5.p3d;l3r5.p3d;l3r4.p3d;l3r5_dam.p3d;");
+SetDynaLoadData("l3z2.p3d;l3r1.p3d;l3z1.p3d;");
 
 InitLevelPlayerVehicle("smith_v","m4_carstart2","OTHER");
 

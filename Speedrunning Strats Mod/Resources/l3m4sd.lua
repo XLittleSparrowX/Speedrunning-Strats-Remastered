@@ -17,4 +17,4 @@ else
    car = "MBL"
 end
 
-Redirect(GetModPath() .. "/Resources/SeparateSpawns/Hellfish/L3M4" .. sedan .. car .. ".mfk")
+Redirect(GetModPath() .. "/Resources/SeparateSpawns/Hellfish/l3m4sd" .. sedan .. car .. ".mfk")
