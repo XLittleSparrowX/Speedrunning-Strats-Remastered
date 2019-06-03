@@ -1,0 +1,71 @@
+SelectMission("m6");
+
+SetMissionResetPlayerInCar("m6_carstart2");
+SetDynaLoadData("l5z4.p3d;l5r2.p3d;l5r3.p3d;");
+InitLevelPlayerVehicle("snake_v","m6_snakecar","OTHER");
+
+UsePedGroup(4);
+SetForcedCar();
+SetNumValidFailureHints( 5 );
+
+
+AddStage(0); // find the armored car
+	SetMaxTraffic(5);
+	SetStageMessageIndex(167);
+	SetHUDIcon( "google" );
+	AddObjective("goto");
+		AddStageVehicle("cArmor","m6_armor_carstart","NULL","Missions\level05\M6dest.con", "eddie");
+		SetDestination("m6_armor_start", "carsphere");
+		SetCollectibleEffect("wrench_collect");
+	CloseObjective();
+	AddCondition("outofvehicle");
+		SetCondTime( 10000 );
+	CloseCondition();
+	AddCondition( "damage" );
+		SetCondMinHealth( 0.0 );
+		SetCondTargetVehicle( "snake_v" );
+	CloseCondition();
+CloseStage();
+
+AddStage(0);
+	SetStageMessageIndex(79);
+	SetHUDIcon( "arm_v" );
+	SetMaxTraffic(3);
+	ActivateVehicle("cArmor","NULL","target");
+	SetVehicleAIParams( "cArmor", -10, -9 ); //  <=== name, min, max; 0,1 = really dumb, no shortcuts
+	AddStageWaypoint( "m6_armor_path1" );
+	AddStageWaypoint( "m6_armor_path2" );
+	AddStageWaypoint( "m6_armor_path3" );
+	AddStageWaypoint( "m6_armor_path4" );
+	AddStageWaypoint( "m6_armor_path5" );
+	AddStageWaypoint( "m6_armor_path7" );
+	AddStageWaypoint( "m6_armor_path8" );
+	AddStageWaypoint( "m6_armor_path1" );
+	AddStageWaypoint( "m6_armor_path2" );
+	AddStageWaypoint( "m6_armor_path3" );
+	AddStageWaypoint( "m6_armor_path4" );
+	AddStageWaypoint( "m6_armor_path5" );
+	AddStageWaypoint( "m6_armor_path7" );
+	AddStageWaypoint( "m6_armor_path8" );
+	AddObjective("destroy");
+		SetObjTargetVehicle("cArmor");
+	CloseObjective();
+//	AddStageTime(210);
+//	AddCondition("timeout");
+//		//SetHitNRun();
+//	CloseCondition();
+	AddCondition("outofvehicle");
+		SetCondTime( 10000 );
+	CloseCondition();
+	AddCondition( "damage" );
+		SetCondMinHealth( 0.0 );
+		SetCondTargetVehicle( "snake_v" );
+	CloseCondition();
+	AddStageMusicChange();
+	ShowStageComplete();
+	SetCompletionDialog("hideout","snake");
+CloseStage();
+
+
+CloseMission();
+

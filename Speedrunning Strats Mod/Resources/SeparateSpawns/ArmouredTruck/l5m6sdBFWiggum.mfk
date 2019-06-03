@@ -1,0 +1,26 @@
+SelectMission("m6sd");
+
+SetMissionResetPlayerOutCar("m6_carstart1","m6_carstart");
+SetDynaLoadData("l5z4.p3d;l5r2.p3d;l5r3.p3d;");
+
+UsePedGroup(4);
+
+AddStage();
+	AddObjective("timer");
+		SetDurationTime(3);
+	CloseObjective();
+CloseStage();
+
+CloseMission();
+
+
+//dialogue_hands_in_air
+//dialogue_hands_on_hips
+//dialogue_scratch_head
+//dialogue_shaking_fist
+//dialogue_thinking
+//dialogue_yes
+//dialogue_no
+//dialogue_cross_arms
+//dialogue_open_arm_hand_gesture
+//dialogue_shake_hand_in_air

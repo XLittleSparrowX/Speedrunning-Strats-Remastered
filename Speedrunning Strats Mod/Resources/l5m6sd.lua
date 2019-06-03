@@ -8,4 +8,4 @@ else
 end
 
 
-Redirect(GetModPath() .. "/Resources/SeparateSpawns/ArmouredTruck/l5m6"  .. car .. ".mfk")
+Redirect(GetModPath() .. "/Resources/SeparateSpawns/ArmouredTruck/l5m6sd"  .. car .. ".mfk")
