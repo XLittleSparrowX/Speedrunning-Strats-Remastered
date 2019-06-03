@@ -1,0 +1,54 @@
+SelectMission("bm1");
+
+SetMissionResetPlayerInCar("bm1_spawn1");
+SetDynaLoadData("l6r1.p3d;l6z1.p3d;l6z2.p3d;");
+InitLevelPlayerVehicle("carhom_v","bm1_spawn1","OTHER");
+
+UsePedGroup(1);
+
+SetForcedCar();
+
+AddStage(0);
+	SetStageMessageIndex(247);
+	SetHUDIcon( "bowlera" );
+	AddObjective("goto");
+		AddStageVehicle("cMilk","bm1_milk","NULL","Missions\level06\BM1dest2.con");
+		SetDestination( "bm_bowlerama", "carsphere");
+		//SetCollectibleEffect("wrench_collect");
+	CloseObjective();
+	ShowStageComplete();
+CloseStage();
+
+AddStage(0);
+	SetStageMessageIndex(150);
+	SetHUDIcon( "milk_v" );
+	ActivateVehicle("cMilk","NULL","target");
+	SetVehicleAIParams( "cMilk", -10, -9 ); //  no shortcuts
+	AddStageWaypoint( "bm1_milk_path1" );
+	AddStageWaypoint( "bm1_milk_path4" );
+	AddObjective("destroy");
+		SetObjTargetVehicle("cMilk");
+	CloseObjective();
+	SetStageTime(180);
+	AddCondition("timeout");
+		//SetHitNRun();
+	CloseCondition();
+	ShowStageComplete();
+CloseStage();
+
+AddStage(0);
+	SetStageMessageIndex(60);
+	SetHUDIcon( "snake" );
+	AddObjective( "talkto" );
+		SetTalkToTarget("snake", 0, 0);
+	CloseObjective();
+CloseStage();
+
+AddStage(0, "final");
+	AddObjective("dialogue");
+		SetDialogueInfo("bart","snake","deal",0);
+		SetCamBestSide( "bm1_bestside" );
+	CloseObjective();
+CloseStage();
+
+CloseMission();
