@@ -1,0 +1,27 @@
+SelectMission("m1sd");
+
+SetMissionResetPlayerOutCar("m1_marge2","mission1_carstart");
+//SetDynaLoadData("l4z1.p3d;l4r1.p3d;l4r7.p3d");
+SetDynaLoadData("l4z2.p3d;l4r1.p3d;l4r2.p3d;");
+
+UsePedGroup(0);
+
+AddStage();
+	AddObjective("timer");
+		SetDurationTime(3);
+	CloseObjective();
+CloseStage();
+
+CloseMission();
+
+
+//dialogue_hands_in_air
+//dialogue_hands_on_hips
+//dialogue_scratch_head
+//dialogue_shaking_fist
+//dialogue_thinking
+//dialogue_yes
+//dialogue_no
+//dialogue_cross_arms
+//dialogue_open_arm_hand_gesture
+//dialogue_shake_hand_in_air
