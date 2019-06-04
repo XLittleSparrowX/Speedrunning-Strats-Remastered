@@ -1,0 +1,26 @@
+SelectMission("m3sd");
+
+UsePedGroup( 0 ); 
+
+SetMissionResetPlayerOutCar("m3_start", "level1_carstart");
+SetDynaLoadData("l1z1.p3d;l1r1.p3d;l1z2.p3d;");
+
+AddStage();
+	AddObjective("timer");
+		SetPresentationBitmap( "art/frontend/dynaload/images/mis01_03.p3d" );
+		SetDurationTime(3);
+	CloseObjective();
+CloseStage();
+
+CloseMission();
+
+//dialogue_hands_in_air
+//dialogue_hands_on_hips
+//dialogue_scratch_head
+//dialogue_shaking_fist
+//dialogue_thinking
+//dialogue_yes
+//dialogue_no
+//dialogue_cross_arms
+//dialogue_open_arm_hand_gesture
+//dialogue_shake_hand_in_air

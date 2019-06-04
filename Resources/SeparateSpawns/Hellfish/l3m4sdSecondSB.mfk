@@ -1,0 +1,25 @@
+SelectMission("m4sd");
+
+SetMissionResetPlayerOutCar("m4_lisa2", "m4_carstart");
+SetDynaLoadData("l3z2.p3d;l3r1.p3d;l3z1.p3d;");
+
+UsePedGroup(4);
+
+AddStage();
+	AddObjective("timer");
+		SetDurationTime(3);
+	CloseObjective();
+CloseStage();
+
+CloseMission();
+
+//dialogue_hands_in_air
+//dialogue_hands_on_hips
+//dialogue_scratch_head
+//dialogue_shaking_fist
+//dialogue_thinking
+//dialogue_yes
+//dialogue_no
+//dialogue_cross_arms
+//dialogue_open_arm_hand_gesture
+//dialogue_shake_hand_in_air
