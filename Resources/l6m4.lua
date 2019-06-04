@@ -11,7 +11,7 @@ else
 end
 
 local tick_opt = GetSetting("L6M4Spawn")
-if tick_opt == 0 then
+if tick_opt == true then
    tick = "Spawn"
 else
    tick = "Vanilla"
