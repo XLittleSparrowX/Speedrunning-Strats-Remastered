@@ -7,6 +7,7 @@ SetDynaLoadData("l1z1.p3d;l1r1.p3d;l1z2.p3d;");
 
 AddStage();
 	AddObjective("timer");
+		SetPresentationBitmap( "art/frontend/dynaload/images/mis01_03.p3d" );
 		SetDurationTime(3);
 	CloseObjective();
 CloseStage();

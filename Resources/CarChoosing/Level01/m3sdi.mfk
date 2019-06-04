@@ -17,7 +17,7 @@ AddStage(0);
 	SetStageMessageIndex(217);
 	SetHUDIcon("simpsons");
 	AddObjective( "goto" );
-	
+		SetPresentationBitmap( "art/frontend/dynaload/images/mis01_03.p3d" );
 		SetDestination( "m2_simpsonhouse_sd", "carsphere");
 		SetCollectibleEffect("wrench_collect");
 	CloseObjective();
