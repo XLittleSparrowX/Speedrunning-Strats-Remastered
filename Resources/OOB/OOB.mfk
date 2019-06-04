@@ -46,6 +46,7 @@ AddStage(0);
 	ActivateVehicle( "cBlbart","NULL","chase" );
 	AddObjective( "losetail" );
 		SetObjTargetVehicle("cBlbart");
+		SetObjDistance(150);
 	CloseObjective();
 	AddCondition("outofvehicle");
 		SetCondTime( 10000 );
