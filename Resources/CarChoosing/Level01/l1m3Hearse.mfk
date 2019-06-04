@@ -3,10 +3,14 @@ SelectMission("m3");
 SetMissionResetPlayerInCar("m3_start");
 SetDynaLoadData("l1z1.p3d;l1r1.p3d;l1z2.p3d;");
 
+
+InitLevelPlayerVehicle("cHears","m3_start","OTHER");
+
 SetNumValidFailureHints( 5 );
 
 UsePedGroup( 1 ); 
 
+SetForcedCar();
 
 AddStage(8);
 	RESET_TO_HERE();
