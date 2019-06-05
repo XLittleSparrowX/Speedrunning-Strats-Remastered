@@ -1,5 +1,10 @@
-if GetSetting("OOBPractice") then
-    Redirect (GetModPath() .. "/Resources/OOB/OOB.mfk")
+local  spawn
+
+local spawn_opt = GetSetting("OOBPractice")
+if spawn_opt == 0 then
+   spawn = "60"
 else
-    Redirect (GetModPath() .. "/Scripts/Missions/Level07/m6i.mfk")
+   spawn = "High"
 end
+
+Redirect(GetModPath() .. "/Resources/OOB/OOB" .. spawn .. ".mfk")

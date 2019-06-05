@@ -1,0 +1,84 @@
+SelectMission("m6");
+
+SetMissionResetPlayerInCar("m6_bridgeSpawn");
+SetDynaLoadData("l7z3.p3d;l7r2.p3d;l7r3.p3d;");
+
+InitLevelPlayerVehicle("snake_v","m6_bridgeSpawn","OTHER");
+SetNumValidFailureHints( 5 );
+UsePedGroup(3);
+
+AddCollectibleStateProp("bombbarrel","m6_barrel1", 2);
+
+//This is a forced car mission
+SetForcedCar();
+
+//AddStage(0);
+//	SetStageMessageIndex(248);
+//	SetHUDIcon( "pwrplant" );
+//	AddObjective( "goto" );
+//		SetDestination( "m6_ppentrance", "carsphere");
+//		SetCollectibleEffect("wrench_collect");
+//	CloseObjective();
+//	AddCondition("outofvehicle");
+//		SetCondTime( 10000 );
+//	CloseCondition();
+//	AddCondition( "damage" );
+//		SetCondMinHealth( 0.0 );
+//		SetCondTargetVehicle( "snake_v" );
+//	CloseCondition();
+//CloseStage();
+
+AddStage(0);
+	SetStageMessageIndex(221);
+	SetHUDIcon( "barrel" );
+	AddObjective( "pickupitem" );
+		SetPickupTarget("bombbarrel");
+	CloseObjective();
+	AddCondition("outofvehicle");
+		SetCondTime( 10000 );
+	CloseCondition();
+	AddCondition( "damage" );
+		SetCondMinHealth( 0.0 );
+		SetCondTargetVehicle( "snake_v" );
+	CloseCondition();
+	ShowStageComplete();
+CloseStage();
+
+AddStage(0);
+	SetStageMessageIndex(202);
+	SetHUDIcon( "playgrou" );
+	AddObjective( "goto" );
+		AddNPC("grandpa", "m2_cbg_sd");
+//		AddStageVehicle("gramR_v","m7_grampa_carstart","NULL","HardRace\AI_2nd.con");
+// NO MEMORY for gramR_v - an AI car is already loaded
+		SetDestination( "m2_playground", "carsphere");
+		SetCollectibleEffect("wrench_collect");
+	CloseObjective();
+	SetStageTime(95); 
+	AddCondition("outofvehicle");
+		SetCondTime( 10000 );
+	CloseCondition();
+	AddCondition( "damage" );
+		SetCondMinHealth( 0.0 );
+		SetCondTargetVehicle( "snake_v" );
+	CloseCondition();
+	AddCondition( "keepbarrel", 1 );
+	CloseCondition();
+	ShowStageComplete();
+CloseStage();
+
+AddStage("final");
+	SetStageMessageIndex(219);
+	SetHUDIcon( "ufo" );
+	AddObjective("destroyboss");
+		AddCondition("damage");
+		SetObjTargetBoss("Planet Express Ship");
+		CloseCondition();
+	CloseObjective();
+	AddCondition( "keepbarrel", 2 );
+	CloseCondition();
+	AddStageTime(10);
+	SetCompletionDialog("sayonara","snake");
+CloseStage();
+
+CloseMission();
